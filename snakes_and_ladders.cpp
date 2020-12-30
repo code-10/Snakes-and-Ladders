@@ -40,7 +40,8 @@ int main()
     }
     if(login=="y")
         options();
-    else{
+    else
+    {
         cout<<"\nWrong choice mate\n"<<endl;
         main();
     }
@@ -509,5 +510,3 @@ int startplay(int i,int n,int choice)
 
 
 }
-
-
