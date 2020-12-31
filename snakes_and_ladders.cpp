@@ -312,16 +312,16 @@ int whowon()
 int options()
 {
 
-    char choice;
+    int choice;
     cout<<"\n1 player or 2 players ? 1 or 2"<<endl;
     cin>>choice;
 
-    if(choice=='2')
+    if(choice==2)
     {
         cout<<"\nTWO PLAYER GAME\n";
         play_game(choice);
     }
-    else if(choice=='1')
+    else if(choice==1)
     {
         cout<<"\nONE PLAYER GAME\n";
         cout<<"\nplayer A is RED (You) | player B is BLUE (Computer) \n"<<endl;
