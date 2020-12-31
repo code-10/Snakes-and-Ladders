@@ -158,7 +158,7 @@ void create_snakes(int n)
     }
     else if(st>(n*n)||en<1)
     {
-        cout<<"\nDont go out of limit of board, try to create snake agaiun\n"<<endl;
+        cout<<"\nDon't go out of limit of board, try to create snake again\n"<<endl;
         create_snakes(n);
     }
     else
@@ -312,16 +312,16 @@ int whowon()
 int options()
 {
 
-    int choice;
+    char choice;
     cout<<"\n1 player or 2 players ? 1 or 2"<<endl;
     cin>>choice;
 
-    if(choice==2)
+    if(choice=='2')
     {
         cout<<"\nTWO PLAYER GAME\n";
         play_game(choice);
     }
-    else if(choice==1)
+    else if(choice=='1')
     {
         cout<<"\nONE PLAYER GAME\n";
         cout<<"\nplayer A is RED (You) | player B is BLUE (Computer) \n"<<endl;
@@ -510,3 +510,4 @@ int startplay(int i,int n,int choice)
 
 
 }
+
