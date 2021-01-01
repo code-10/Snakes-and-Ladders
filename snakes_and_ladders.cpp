@@ -1,5 +1,5 @@
 #include <iostream>
-#include<time.h>
+#include <time.h>
 #include <bits/stdc++.h>
 
 typedef long long ll;
@@ -17,10 +17,10 @@ int roll_dice_b();
 void whereami(int);
 void whatsthescore();
 int whowon();
-int play_game(int);
+int play_game(string);
 void delay(int);
 int options();
-int startplay(int,int,int);
+int startplay(int,int,string);
 
 int board[100][100],sal[100][100];
 
@@ -307,21 +307,22 @@ int whowon()
     if(b==r)
         cout<<"Its a draw :( "<<endl;
 
+    return 0;
 }
 
 int options()
 {
 
-    int choice;
+    string choice;
     cout<<"\n1 player or 2 players ? 1 or 2"<<endl;
     cin>>choice;
 
-    if(choice==2)
+    if(choice=="2")
     {
         cout<<"\nTWO PLAYER GAME\n";
         play_game(choice);
     }
-    else if(choice==1)
+    else if(choice=="1")
     {
         cout<<"\nONE PLAYER GAME\n";
         cout<<"\nplayer A is RED (You) | player B is BLUE (Computer) \n"<<endl;
@@ -334,18 +335,18 @@ int options()
         return 0;
     }
 
-
+    return 0;
 
 
 }
 
-int play_game(int choice)
+int play_game(string choice)
 {
     int n;
     cout<<"\nlet's Go! \n\nenter the size of the board, Minimum Board Size = 5, Maximum Board Size = 10 "<<endl;
     cin>>n;
 
-    int storechoice=choice;
+    string storechoice=choice;
 
     if(n<5||n>10)
     {
@@ -359,15 +360,15 @@ int play_game(int choice)
 
     cout<<endl<<endl;
 
-    cout<<"\nJust Play or Create your own snakes and ladders? play (just play) or master (create) \n"<<endl;
+    cout<<"\nJust Play or Create your own snakes and ladders? p (just play) or m (master create) \n"<<endl;
     string op;
     cin>>op;
-    if(op=="master")
+    if(op=="m")
     {
         cout<<"Let's create snakes and ladder master\n\n";
         master_create_snake_and_ladder(n);
     }
-    else if(op=="play")
+    else if(op=="p")
         create_snake_and_ladder(n);
     else
     {
@@ -386,12 +387,13 @@ int play_game(int choice)
 
     startplay(1,n,choice);
 
+    return 0;
 }
 
 
 int i=1;
 
-int startplay(int i,int n,int choice)
+int startplay(int i,int n,string choice)
 {
 
     while(1)
@@ -442,12 +444,12 @@ int startplay(int i,int n,int choice)
         {
             int dice=roll_dice_b();
 
-            if(choice==2)
+            if(choice=="2")
             {
                 cout<<"BLUE's turn roll your die? y or n ?"<<endl;
                 cin>>cho;
             }
-            else if(choice==1)
+            else if(choice=="1")
             {
                 cout<<"BLUE is playing........"<<endl;
                 delay(1);
