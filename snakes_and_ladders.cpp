@@ -343,14 +343,14 @@ int options()
 int play_game(string choice)
 {
     int n;
-    cout<<"\nlet's Go! \n\nenter the size of the board, Minimum Board Size = 5, Maximum Board Size = 10 "<<endl;
+    cout<<"\nlet's Go! \n\nenter the size of the board, Minimum Board Size = 5, Maximum Board Size = 10 \n"<<endl;
     cin>>n;
 
     string storechoice=choice;
 
     if(n<5||n>10)
     {
-        cout<<"\nMinimum board size is 5 and maximum Board size is 10, kindly enter within 5 and 10";
+        cout<<"\n\nMinimum board size is 5 and maximum Board size is 10, kindly enter within 5 and 10 \n";
         play_game(storechoice);
     }
 
@@ -373,11 +373,12 @@ int play_game(string choice)
     else
     {
         cout<<"Invalid choice mate"<<endl;
+        play_game(storechoice);
         return 0;
     }
 
 
-    cout<<"Board with Snakes and Ladders"<<endl;
+    cout<<"\nBoard with Snakes and Ladders"<<endl;
     show_snake_and_ladder(n);
 
     cout<<endl<<endl;
